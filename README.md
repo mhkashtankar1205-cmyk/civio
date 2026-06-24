@@ -1,5 +1,3 @@
-# civio
-Community-driven civic issue reporting and municipal resolution platform
 # Civio
 
 Civio is a community-driven civic issue reporting platform that connects citizens with municipal authorities.
