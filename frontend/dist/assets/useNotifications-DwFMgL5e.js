@@ -1,1 +1,0 @@
-import{u as e,a as i}from"./useMutation-DgvPdXL4.js";import{a as n}from"./index-BhKH-2tx.js";function r(){const t=n();return{useGetNotifications:()=>i({queryKey:["notifications"],queryFn:async()=>[]}),useMarkReadMutation:()=>e({mutationFn:async()=>{},onSuccess:()=>{t.invalidateQueries({queryKey:["notifications"]})}})}}export{r as u};
