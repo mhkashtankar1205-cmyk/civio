@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Civio | Join the Community</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #e5e1e4;
+            overflow-x: hidden;
+        }
+
+        .glass-card {
+            background: rgba(18, 18, 20, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .primary-gradient {
+            background: linear-gradient(135deg, #5149d4 0%, #c3c0ff 100%);
+        }
+
+        .primary-gradient-text {
+            background: linear-gradient(135deg, #c3c0ff 0%, #ffb1c0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .input-glow:focus-within {
+            box-shadow: 0 0 15px rgba(195, 192, 255, 0.15);
+            border-color: #c3c0ff;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #353437;
+            border-radius: 10px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#c3c0ff",
+                        "on-tertiary-fixed": "#2c1700",
+                        "inverse-surface": "#e5e1e4",
+                        "tertiary-container": "#935800",
+                        "surface-container-highest": "#353437",
+                        "outline": "#918fa0",
+                        "surface-dim": "#131315",
+                        "background": "#131315",
+                        "primary-fixed": "#e2dfff",
+                        "surface-bright": "#39393b",
+                        "outline-variant": "#464554",
+                        "tertiary-fixed": "#ffdcbc",
+                        "on-primary-fixed": "#0f0069",
+                        "on-secondary": "#660029",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#5149d4",
+                        "on-background": "#e5e1e4",
+                        "on-tertiary-fixed-variant": "#683d00",
+                        "on-surface": "#e5e1e4",
+                        "on-secondary-fixed": "#3f0017",
+                        "secondary": "#ffb1c0",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "primary-container": "#5851db",
+                        "surface-container": "#201f21",
+                        "secondary-fixed": "#ffd9df",
+                        "on-surface-variant": "#c7c4d7",
+                        "on-primary-container": "#e4e0ff",
+                        "surface-container-high": "#2a2a2c",
+                        "surface-tint": "#c3c0ff",
+                        "error-container": "#93000a",
+                        "surface": "#131315",
+                        "on-secondary-container": "#ffc6d0",
+                        "on-primary": "#1e00a5",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#b7004f",
+                        "secondary-fixed-dim": "#ffb1c0",
+                        "surface-container-low": "#1b1b1d",
+                        "on-tertiary": "#492900",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0e0e10",
+                        "tertiary": "#ffb86b",
+                        "on-secondary-fixed-variant": "#90003d",
+                        "on-tertiary-container": "#ffdfc1",
+                        "on-primary-fixed-variant": "#382cbb",
+                        "tertiary-fixed-dim": "#ffb86b",
+                        "inverse-on-surface": "#303032",
+                        "surface-variant": "#353437"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "gutter": "12px",
+                        "margin-desktop": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "stat-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["32px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "stat-lg": ["28px", {"lineHeight": "1", "fontWeight": "800"}],
+                        "headline-lg-mobile": ["20px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "label-bold": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-lg": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-black selection:bg-primary/30 min-h-screen flex flex-col items-center">
+<!-- Top AppBar (Identity & Language) -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl flex justify-between items-center px-margin-mobile h-16 max-w-[600px]">
+<div class="font-display-lg text-display-lg bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Civio</div>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-high border border-white/5 hover:bg-surface-variant transition-all active:scale-95">
+<span class="material-symbols-outlined text-[18px] text-primary" data-icon="language">language</span>
+<span class="font-label-bold text-label-bold text-on-surface">EN</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</button>
+</header>
+<!-- Main Registration Canvas -->
+<main class="w-full max-w-[600px] mt-24 mb-12 px-margin-mobile flex-1 flex flex-col">
+<!-- Welcome Hero -->
+<div class="mb-stack-lg text-center">
+<h1 class="font-display-lg text-display-lg text-on-surface mb-2">Create Account</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Empower your neighborhood. Start reporting today.</p>
+</div>
+<!-- Social Login (IG Style) -->
+<div class="grid grid-cols-2 gap-stack-md mb-stack-lg">
+<button class="flex items-center justify-center gap-2 py-3.5 rounded-xl bg-surface-container border border-white/10 hover:bg-surface-container-high transition-all active:scale-[0.98]">
+<img alt="Google" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCFycfn4DI6B1ox3z4RLFKYzZwe-aVKGUM6Rq_9Fb_dEgeabyRDB8SoMe1ToxCxNoqMD9gHCL8GipYBVNy70TgDfwbRgcX4ruYYf0-rq8i1g83PTozYtjpSTFvSywEinQGUb8Dnqlt4NFdQt0RgHe92P_W03KSwEk67g1zrMdRdfcuxoBKwr9lQ2gPVeEsL32teIvSjMpXPd4u0pzE9fwAG-jqbt4oRE0KxsbGjF8KE_B7pJ63tRU9NfYZdhFGfH8ORlD220hVbq8"/>
+<span class="font-label-bold text-label-bold text-on-surface">Google</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-3.5 rounded-xl bg-surface-container border border-white/10 hover:bg-surface-container-high transition-all active:scale-[0.98]">
+<img alt="Apple" class="w-5 h-5 invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApjNLAxFbCvLLuPJAg9sabv2eXx3CqQ_F0v_r3knoVyt0NFkHmy4SVAEFPnuHBuDFxX2VI_ylhh-3tKNy1fgWd3gRbk9Ga1qT9JEGWhYDKQFfJQ9oDOYajxy0yl4MdLAizd74dT1OlLdD2m5O7TMQwLdX0pSUx0xY0oo7x9OxVZhVfmYhMiEoO12yla74rMwgleLMMQ__5yQxQ5-VMKYukdymUS9WbglsgCbJGpljeAAUkj1hM4lEITB6hQ6sIqHWGAaFwbeXTD3Q"/>
+<span class="font-label-bold text-label-bold text-on-surface">Apple</span>
+</button>
+</div>
+<div class="flex items-center gap-4 mb-stack-lg">
+<div class="h-px flex-1 bg-white/5"></div>
+<span class="font-label-bold text-label-bold text-on-surface-variant/50">OR EMAIL</span>
+<div class="h-px flex-1 bg-white/5"></div>
+</div>
+<!-- Registration Form -->
+<form class="space-y-stack-md">
+<!-- Full Name -->
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold text-on-surface-variant ml-1">FULL NAME</label>
+<div class="relative group">
+<input class="w-full h-14 bg-surface-container border-none rounded-xl px-12 text-on-surface focus:ring-1 focus:ring-primary placeholder:text-on-surface-variant/40 transition-all" placeholder="Alex Rivera" type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors" data-icon="person">person</span>
+</div>
+</div>
+<!-- Username -->
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold text-on-surface-variant ml-1">USERNAME</label>
+<div class="relative group">
+<input class="w-full h-14 bg-surface-container border-none rounded-xl px-12 text-on-surface focus:ring-1 focus:ring-primary placeholder:text-on-surface-variant/40 transition-all" placeholder="arivera_civic" type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors" data-icon="alternate_email">alternate_email</span>
+</div>
+</div>
+<!-- Email -->
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold text-on-surface-variant ml-1">EMAIL ADDRESS</label>
+<div class="relative group">
+<input class="w-full h-14 bg-surface-container border-none rounded-xl px-12 text-on-surface focus:ring-1 focus:ring-primary placeholder:text-on-surface-variant/40 transition-all" placeholder="alex@example.com" type="email"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors" data-icon="mail">mail</span>
+</div>
+</div>
+<!-- Password -->
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold text-on-surface-variant ml-1">PASSWORD</label>
+<div class="relative group">
+<input class="w-full h-14 bg-surface-container border-none rounded-xl px-12 text-on-surface focus:ring-1 focus:ring-primary placeholder:text-on-surface-variant/40 transition-all" placeholder="••••••••" type="password"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors" data-icon="lock">lock</span>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-on-surface" type="button">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<!-- Area with Map Pin -->
+<div class="space-y-2">
+<label class="font-label-bold text-label-bold text-on-surface-variant ml-1">YOUR AREA</label>
+<div class="flex gap-2">
+<div class="relative group flex-1">
+<input class="w-full h-14 bg-surface-container border-none rounded-xl px-12 text-on-surface focus:ring-1 focus:ring-primary placeholder:text-on-surface-variant/40 transition-all" placeholder="San Francisco, CA" type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors" data-icon="map">map</span>
+</div>
+<button class="h-14 w-14 flex items-center justify-center rounded-xl bg-primary-container text-on-primary-container hover:bg-primary-container/80 transition-all active:scale-90" title="Use current location" type="button">
+<span class="material-symbols-outlined" data-icon="my_location">my_location</span>
+</button>
+</div>
+</div>
+<!-- T&C -->
+<div class="pt-2 flex items-start gap-3">
+<div class="mt-1">
+<input class="w-5 h-5 rounded border-white/10 bg-surface-container text-primary focus:ring-primary focus:ring-offset-0" id="terms" type="checkbox"/>
+</div>
+<label class="font-body-sm text-body-sm text-on-surface-variant" for="terms">
+                    I agree to the <a class="text-primary hover:underline" href="#">Terms of Service</a> and <a class="text-primary hover:underline" href="#">Privacy Policy</a>.
+                </label>
+</div>
+<!-- Sign Up Button -->
+<button class="w-full h-16 mt-stack-lg rounded-2xl primary-gradient text-on-primary-fixed font-headline-lg flex items-center justify-center gap-2 shadow-[0_8px_32px_rgba(81,73,212,0.3)] transition-all hover:shadow-[0_8px_40px_rgba(81,73,212,0.5)] hover:-translate-y-0.5 active:scale-95 active:translate-y-0" type="submit">
+                Sign Up
+                <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</form>
+<!-- Login Link -->
+<div class="mt-12 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Already have an account? <a class="font-label-bold text-primary hover:underline underline-offset-4" href="#">Sign In</a>
+</p>
+</div>
+</main>
+<!-- Visual Aesthetic Element: Floating Sphere (Decorative) -->
+<div class="fixed -bottom-32 -left-32 w-64 h-64 bg-primary/20 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+<div class="fixed -top-32 -right-32 w-64 h-64 bg-secondary/10 blur-[100px] rounded-full pointer-events-none -z-10"></div>
+<!-- Micro-interaction Script -->
+<script>
+        // Form feedback and simple interactivity
+        document.querySelectorAll('input').forEach(input => {
+            input.addEventListener('focus', () => {
+                input.parentElement.classList.add('scale-[1.01]');
+            });
+            input.addEventListener('blur', () => {
+                input.parentElement.classList.remove('scale-[1.01]');
+            });
+        });
+
+        // Simple Location Trigger Mock
+        const locationBtn = document.querySelector('button[title="Use current location"]');
+        locationBtn.addEventListener('click', () => {
+            const icon = locationBtn.querySelector('.material-symbols-outlined');
+            icon.style.animation = 'spin 1s linear infinite';
+            
+            // Mocking a delay
+            setTimeout(() => {
+                icon.style.animation = '';
+                const areaInput = document.querySelector('input[placeholder="San Francisco, CA"]');
+                areaInput.value = "New York, NY (Detected)";
+                areaInput.classList.add('text-primary');
+                setTimeout(() => areaInput.classList.remove('text-primary'), 1000);
+            }, 1200);
+        });
+    </script>
+<style>
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</body></html>

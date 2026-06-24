@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Civio - Live Civic Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#c3c0ff",
+                    "on-tertiary-fixed": "#2c1700",
+                    "inverse-surface": "#e5e1e4",
+                    "tertiary-container": "#935800",
+                    "surface-container-highest": "#353437",
+                    "outline": "#918fa0",
+                    "surface-dim": "#131315",
+                    "background": "#131315",
+                    "primary-fixed": "#e2dfff",
+                    "surface-bright": "#39393b",
+                    "outline-variant": "#464554",
+                    "tertiary-fixed": "#ffdcbc",
+                    "on-primary-fixed": "#0f0069",
+                    "on-secondary": "#660029",
+                    "error": "#ffb4ab",
+                    "inverse-primary": "#5149d4",
+                    "on-background": "#e5e1e4",
+                    "on-tertiary-fixed-variant": "#683d00",
+                    "on-surface": "#e5e1e4",
+                    "on-secondary-fixed": "#3f0017",
+                    "secondary": "#ffb1c0",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "primary-container": "#5851db",
+                    "surface-container": "#201f21",
+                    "secondary-fixed": "#ffd9df",
+                    "on-surface-variant": "#c7c4d7",
+                    "on-primary-container": "#e4e0ff",
+                    "surface-container-high": "#2a2a2c",
+                    "surface-tint": "#c3c0ff",
+                    "error-container": "#93000a",
+                    "surface": "#131315",
+                    "on-secondary-container": "#ffc6d0",
+                    "on-primary": "#1e00a5",
+                    "on-error-container": "#ffdad6",
+                    "secondary-container": "#b7004f",
+                    "secondary-fixed-dim": "#ffb1c0",
+                    "surface-container-low": "#1b1b1d",
+                    "on-tertiary": "#492900",
+                    "on-error": "#690005",
+                    "surface-container-lowest": "#0e0e10",
+                    "tertiary": "#ffb86b",
+                    "on-secondary-fixed-variant": "#90003d",
+                    "on-tertiary-container": "#ffdfc1",
+                    "on-primary-fixed-variant": "#382cbb",
+                    "tertiary-fixed-dim": "#ffb86b",
+                    "inverse-on-surface": "#303032",
+                    "surface-variant": "#353437"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "32px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "gutter": "12px",
+                    "margin-desktop": "24px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "stat-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-bold": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["32px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "stat-lg": ["28px", {"lineHeight": "1", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["20px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "label-bold": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-lg": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            color: #e5e1e4;
+            -webkit-font-smoothing: antialiased;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .glass-card {
+            background: rgba(18, 18, 20, 0.8);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .story-gradient {
+            background: linear-gradient(45deg, #c3c0ff, #ffb1c0, #ffb86b);
+            padding: 2px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md text-body-md min-h-screen pb-24">
+<!-- Top App Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl transition-all duration-200">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-[600px] mx-auto">
+<div class="flex items-center gap-3">
+<span class="font-display-lg text-display-lg bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Civio</span>
+<div class="flex items-center bg-surface-container-highest rounded-full px-3 py-1 gap-1">
+<span class="text-[10px] font-bold text-primary">EN</span>
+<span class="text-[10px] font-bold text-on-surface-variant/50">|</span>
+<span class="text-[10px] font-bold text-on-surface-variant">हिं</span>
+<span class="text-[10px] font-bold text-on-surface-variant/50">|</span>
+<span class="text-[10px] font-bold text-on-surface-variant">मर</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary transition-all duration-200 active:scale-95">language</button>
+<div class="relative">
+<button class="material-symbols-outlined text-primary transition-all duration-200 active:scale-95">notifications</button>
+<span class="absolute top-0 right-0 w-2 h-2 bg-secondary rounded-full border-2 border-surface"></span>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-[600px] mx-auto pt-20">
+<!-- Live Updates Story Ring Carousel -->
+<section class="py-4 overflow-x-auto no-scrollbar flex px-4 gap-4">
+<div class="flex flex-col items-center gap-1 shrink-0">
+<div class="story-gradient rounded-full">
+<div class="bg-surface rounded-full p-0.5">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-surface">
+<img class="w-full h-full object-cover" data-alt="A cinematic, high-resolution portrait of a local community leader against a vibrant city sunset. The aesthetic is clean and modern, with a dark mode social media feel, dominated by deep blacks and soft purple lighting. Professional photography style with a shallow depth of field, emphasizing the person's determined expression for civic change." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy8uI2MMEsrqMNARmbh_Z1rQSFNGCG4ciD2D_tcko4H5Fsj3NjVni91LOc-7gCfKnrLyxNr2eC4HSdZ6nXo0QwsDkBfsvmVaF5lMTt4P52skgdzmcpJLyYFuE_1OFCkFYuECX0EyjOUoGCbNaLYwO989hvVjO6flhKj7leGUubLutiG3Jc_KpKIRRrsleF7Wd_EMhir_opg6wrfbnJCT1rY5VgA04YE-cAcrSg3IpV2-PxGei1-S_lpAsHNjxoGJotF1MBvgH43Ac"/>
+</div>
+</div>
+</div>
+<span class="text-[10px] font-label-bold text-on-surface">Your Alert</span>
+</div>
+<!-- Loopable Alerts -->
+<div class="flex flex-col items-center gap-1 shrink-0">
+<div class="story-gradient rounded-full">
+<div class="bg-surface rounded-full p-0.5">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-surface">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of a bustling city market at night, captured in a premium dark-mode social media style. The lighting is dramatic with neon purple and orange highlights reflecting off wet pavement. High-contrast, vibrant, and energetic urban photography that feels like an Instagram story highlight for a local neighborhood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxcSG5rB4yd1tujX-d-5y2pudyj89Da6rIcsKDd5gnoc5FffXNQ0P_9mCDH6JWjj2N3XUR6bpympCx-Jy9bim0pHRvIRNMhiOgmQG41ZQ4wV-7PBWHHCfFU4Y7gXr2wpyn2GDVp3_0P5TE0YT5YwXZZp3twa36rrR_uZQoBwiDCGd81thyZ5pa5972zp6D6UXNVbDefc8EY3B2GFwT1V8_l3kR0DyqEwmG0392Mf9TdP_Ou7Ku14kb9D7Q8xgX4W8Zk5UZ1zAaZOs"/>
+</div>
+</div>
+</div>
+<span class="text-[10px] font-label-bold text-on-surface">Koregaon</span>
+</div>
+<div class="flex flex-col items-center gap-1 shrink-0">
+<div class="story-gradient rounded-full">
+<div class="bg-surface rounded-full p-0.5">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-surface">
+<img class="w-full h-full object-cover" data-alt="Aerial view of a modern public park with winding paths and glowing street lamps at twilight. The style is professional and high-fidelity, featuring a palette of deep navy and electric blue. The atmosphere is calm yet technologically advanced, fitting for a civic engagement application focused on urban planning and green spaces." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7hcKafVf0jT433TbLfKFo6kk7mfq-n4xDtEiitO8ofCLBwQOU21sBCWnpDiK9a-U3OW-V1901p71rHhqaxQQlWVmiKK0-_BIgGYD_boDu-zmByATaDqhRvUB50UUDosrQXCOO6mesizMtWPvwJnf7bOvWJw8lSFSWDwECjHNKLwOudN_ToPuR5kN-xwKo2KiVuJMA5m3TeyDw_lq_K2y0ppNpwGqnkfgUnXAgwX9sjKqGG0Jq0kYNRvMNkqCcmM0FTDb7g_ieCwY"/>
+</div>
+</div>
+</div>
+<span class="text-[10px] font-label-bold text-on-surface">Viman Ngr</span>
+</div>
+<div class="flex flex-col items-center gap-1 shrink-0">
+<div class="story-gradient rounded-full">
+<div class="bg-surface rounded-full p-0.5">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-surface">
+<img class="w-full h-full object-cover" data-alt="A vibrant shot of a community art wall in a modern urban district, illuminated by cool-toned spotlighting. The imagery is rich in textures and colors like magenta and cyan, maintaining a sleek dark-mode aesthetic. The focus is on the intersection of community activism and modern street art culture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9_3DHtZzU6lrfE9oKxfqnzDEwd1cIF39TUFm8RYKf_G190X_aqQLnElLzxBXDP_rx2nrDzCVHO19wapCNqkhtoCoYocMV1tgqCmT1SicZoKxfKqLgCnoWDwsB5s7KEZRofiCeWbYf7tPcwS8LwtveTWROw6OZYdPg9fwz_TYRJADxqluJaoXbcmzrG9PC6ROxWG9Z4W-yUsidp5uZ2TfL1EWzMU9fwoWcjjOd1mQCbppHdsfJy5wfuHB_OKMg9GG9qa7rsYj_ysI"/>
+</div>
+</div>
+</div>
+<span class="text-[10px] font-label-bold text-on-surface">Kalyani</span>
+</div>
+<div class="flex flex-col items-center gap-1 shrink-0">
+<div class="story-gradient rounded-full opacity-50">
+<div class="bg-surface rounded-full p-0.5">
+<div class="w-16 h-16 rounded-full overflow-hidden border-2 border-surface">
+<img class="w-full h-full object-cover" data-alt="Close up of a smart-city sensor device attached to a sleek black street pole, with bokeh city lights in the background. The aesthetic is futuristic and tech-forward, utilizing a high-contrast dark theme with glowing blue indicators. A symbol of modern civic infrastructure and digital monitoring." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVnHAE3814GRiS-9DZyQqBKXBmxpiO5hpLswJDLvPbONI5hehf8G1_7WzCOG5XQILtgDSG0NbraOSBjkD64bxLmprCNEQIcPTuOCU5C37Vmf8hWYq8b-nH9b1Xc9u-ox2ICbm2ji0JyCf4OnQ1lmX0ceTFHMGTeLYnPOrZ8AvBVOxO2mjmKyiKpZSVbnSX-7RkCyZoJWMIG2Hh081NxcBbcofofxuqouwXJadyCMKjOyPo-9oh0Z_AZZkfymVmBnOC0Dwb3eSv1sA"/>
+</div>
+</div>
+</div>
+<span class="text-[10px] font-label-bold text-on-surface-variant">Baner</span>
+</div>
+</section>
+<!-- Feed of Post Cards -->
+<div class="flex flex-col gap-8 px-0 md:px-margin-mobile">
+<!-- Post Card 1: Pothole -->
+<article class="bg-surface-container overflow-hidden md:rounded-3xl border-y md:border border-white/10">
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" style="font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<div>
+<p class="font-label-bold text-on-surface text-sm">Aditi Sharma</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-on-surface-variant">location_on</span>
+<span class="text-[11px] text-on-surface-variant">Koregaon Park, Lane 7</span>
+</div>
+</div>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant">more_horiz</button>
+</div>
+<div class="relative w-full aspect-square bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="High-contrast, dramatic photo of a large water-filled pothole on a dark asphalt road at night. The surrounding city lights reflect in the water with an electric blue and purple glow. The style is gritty yet high-end social media photography, emphasizing the urgency of the civic issue through cinematic lighting and deep shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZJwtJchSbho64-MKLv_qe7YhgcEBIB5xo-wETAVMR-8AzKMek_dQaJg6bFrnkIlQER_fwanD9_B3aAmPeGkxM1_MUrpXcXlDunKbLYlWH0LbX6p67kjBBayYQBQcTxuq82vw698BTXd2_G9GCswKAsVs8twcSnU9GufUNsioivGYafZqxD7tsYHP1_GdP7jXQlj14T4zVTvKrvFr069sveWuZ4DkPeO-2EishASAC8qF9dOL2PnC1970W2h2hUIgSnZ5YnIsW-Pk"/>
+<!-- Overlays -->
+<div class="absolute top-4 left-4 flex flex-col gap-2">
+<div class="px-3 py-1 glass-card rounded-full flex items-center gap-1">
+<span class="text-sm">🕳️</span>
+<span class="font-label-bold text-[10px] text-white">Pothole</span>
+</div>
+<div class="px-3 py-1 bg-secondary rounded-full flex items-center gap-1 shadow-lg shadow-secondary/20">
+<span class="material-symbols-outlined text-[14px] text-on-secondary" style="font-variation-settings: 'FILL' 1;">error</span>
+<span class="font-label-bold text-[10px] text-on-secondary uppercase tracking-wider">Urgent</span>
+</div>
+</div>
+<div class="absolute bottom-4 right-4">
+<div class="px-3 py-1 bg-surface/60 backdrop-blur-md rounded-lg text-[10px] font-label-bold text-white border border-white/20">
+                            REPORT #CIV-9021
+                        </div>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-1.5 transition-all duration-200 active:scale-90 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">keyboard_double_arrow_up</span>
+<span class="font-label-bold text-xs">842</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-bold text-xs">124</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant">bookmark</button>
+</div>
+<div class="space-y-2">
+<p class="text-sm line-clamp-2">
+<span class="font-bold text-on-surface">Aditi Sharma</span> Massive pothole opened up after last night's rain. Multiple bikes almost lost control. Needs immediate attention! 
+                        </p>
+<p class="text-[11px] text-on-surface-variant uppercase font-label-bold tracking-tight">3 hours ago • 2.4km away</p>
+</div>
+<!-- Support Row -->
+<div class="mt-6 flex items-center justify-between bg-primary-container/20 rounded-2xl p-4 border border-primary/10">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed text-sm" style="font-variation-settings: 'FILL' 1;">front_hand</span>
+</div>
+<p class="text-xs font-label-bold text-primary">1.2K Residents Support This</p>
+</div>
+<button class="bg-[#FF9F1C] text-black px-4 py-2 rounded-full font-label-bold text-[11px] uppercase tracking-widest active:scale-95 transition-transform shadow-lg shadow-orange-500/20">Support</button>
+</div>
+</div>
+</article>
+<!-- Post Card 2: Garbage -->
+<article class="bg-surface-container overflow-hidden md:rounded-3xl border-y md:border border-white/10">
+<div class="flex items-center justify-between p-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-tertiary-container" style="font-variation-settings: 'FILL' 1;">park</span>
+</div>
+<div>
+<p class="font-label-bold text-on-surface text-sm">Rahul Varma</p>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px] text-on-surface-variant">location_on</span>
+<span class="text-[11px] text-on-surface-variant">Kalyani Nagar, Central Park</span>
+</div>
+</div>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant">more_horiz</button>
+</div>
+<div class="relative w-full aspect-[4/5] bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="A stark, high-fidelity photograph of overflowing garbage bins in a modern city park during the blue hour. The lighting is cool and desaturated, with soft ambient light hitting the colorful plastic waste. The composition is clean and professional, focusing on the environmental impact within a premium dark-themed urban context. Cinematic social media aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDI5RjBXNhudh0ivsSR8MS7r34NV0WonXuU-DWwoaj76WUMEpznt64TqGayX7AgTAn0dB2Hn6YLliuMnNxevMEFFF0cDVxCUdAXOwDV9Hmp2BBABtyLSnAgtU1EhsMoutLjSq6y1QN6voM97sRXzKsQ-zDhRMQhf93qBJVer9my08FYOzEAwd-Sv-Ry1m2ci1opWvNUWjxQDQCr8e2jQcBxo9uKnlsJBZAGIfQOi6xKt0i43bwPG1BkaeqUrKSkv12sJ6zyO70mnEg"/>
+<div class="absolute top-4 left-4 flex flex-col gap-2">
+<div class="px-3 py-1 glass-card rounded-full flex items-center gap-1">
+<span class="text-sm">🗑️</span>
+<span class="font-label-bold text-[10px] text-white">Garbage</span>
+</div>
+</div>
+</div>
+<div class="p-4">
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-1.5 transition-all duration-200 active:scale-90 text-on-surface-variant">
+<span class="material-symbols-outlined">keyboard_double_arrow_up</span>
+<span class="font-label-bold text-xs">321</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-bold text-xs">45</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant">bookmark</button>
+</div>
+<div class="space-y-2">
+<p class="text-sm">
+<span class="font-bold text-on-surface">Rahul Varma</span> The bins haven't been cleared for three days. It's starting to smell and attract stray animals. #CleanCivio
+                        </p>
+<p class="text-[11px] text-on-surface-variant uppercase font-label-bold tracking-tight">5 hours ago • 500m away</p>
+</div>
+<div class="mt-6 flex items-center justify-between bg-surface-container-high rounded-2xl p-4 border border-white/5">
+<div class="flex items-center gap-3">
+<div class="flex -space-x-2">
+<div class="w-6 h-6 rounded-full border-2 border-surface bg-primary/30"></div>
+<div class="w-6 h-6 rounded-full border-2 border-surface bg-secondary/30"></div>
+<div class="w-6 h-6 rounded-full border-2 border-surface bg-tertiary/30"></div>
+</div>
+<p class="text-xs font-label-bold text-on-surface-variant">450 Residents Support This</p>
+</div>
+<button class="text-on-surface bg-white/10 border border-white/10 px-4 py-2 rounded-full font-label-bold text-[11px] uppercase tracking-widest active:scale-95 transition-transform">Support</button>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-20 bg-surface/80 backdrop-blur-xl border-t border-white/10 flex justify-around items-center px-gutter pb-safe z-50 shadow-lg">
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-bold text-label-bold">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-label-bold text-label-bold">Nearby</span>
+</a>
+<div class="relative -top-4">
+<button class="w-14 h-14 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-2xl shadow-primary/40 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'wght' 700;">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+<span class="font-label-bold text-label-bold">Trending</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-bold text-label-bold">Profile</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction: Header shadow on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-2xl', 'shadow-black/50');
+            } else {
+                header.classList.remove('shadow-2xl', 'shadow-black/50');
+            }
+        });
+
+        // Simple Support Button Toggle
+        document.querySelectorAll('button').forEach(btn => {
+            if(btn.innerText === 'SUPPORT') {
+                btn.addEventListener('click', function() {
+                    const isSupported = this.dataset.active === 'true';
+                    if (!isSupported) {
+                        this.style.backgroundColor = '#c3c0ff';
+                        this.innerText = 'SUPPORTED';
+                        this.dataset.active = 'true';
+                    } else {
+                        this.style.backgroundColor = '#FF9F1C';
+                        this.innerText = 'SUPPORT';
+                        this.dataset.active = 'false';
+                    }
+                });
+            }
+        });
+    </script>
+</body></html>

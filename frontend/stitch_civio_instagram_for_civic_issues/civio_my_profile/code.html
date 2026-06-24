@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Civio | Profile</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .verified-ring {
+            background: linear-gradient(to right, #c3c0ff, #ffb1c0);
+            padding: 3px;
+        }
+        .achievement-gradient {
+            background: linear-gradient(135deg, rgba(195, 192, 255, 0.1) 0%, rgba(255, 177, 192, 0.1) 100%);
+        }
+        .glass-tab {
+            backdrop-filter: blur(12px);
+            background-color: rgba(32, 31, 33, 0.6);
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            background-color: #0e0e10;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#c3c0ff",
+                        "on-tertiary-fixed": "#2c1700",
+                        "inverse-surface": "#e5e1e4",
+                        "tertiary-container": "#935800",
+                        "surface-container-highest": "#353437",
+                        "outline": "#918fa0",
+                        "surface-dim": "#131315",
+                        "background": "#131315",
+                        "primary-fixed": "#e2dfff",
+                        "surface-bright": "#39393b",
+                        "outline-variant": "#464554",
+                        "tertiary-fixed": "#ffdcbc",
+                        "on-primary-fixed": "#0f0069",
+                        "on-secondary": "#660029",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#5149d4",
+                        "on-background": "#e5e1e4",
+                        "on-tertiary-fixed-variant": "#683d00",
+                        "on-surface": "#e5e1e4",
+                        "on-secondary-fixed": "#3f0017",
+                        "secondary": "#ffb1c0",
+                        "primary-fixed-dim": "#c3c0ff",
+                        "primary-container": "#5851db",
+                        "surface-container": "#201f21",
+                        "secondary-fixed": "#ffd9df",
+                        "on-surface-variant": "#c7c4d7",
+                        "on-primary-container": "#e4e0ff",
+                        "surface-container-high": "#2a2a2c",
+                        "surface-tint": "#c3c0ff",
+                        "error-container": "#93000a",
+                        "surface": "#131315",
+                        "on-secondary-container": "#ffc6d0",
+                        "on-primary": "#1e00a5",
+                        "on-error-container": "#ffdad6",
+                        "secondary-container": "#b7004f",
+                        "secondary-fixed-dim": "#ffb1c0",
+                        "surface-container-low": "#1b1b1d",
+                        "on-tertiary": "#492900",
+                        "on-error": "#690005",
+                        "surface-container-lowest": "#0e0e10",
+                        "tertiary": "#ffb86b",
+                        "on-secondary-fixed-variant": "#90003d",
+                        "on-tertiary-container": "#ffdfc1",
+                        "on-primary-fixed-variant": "#382cbb",
+                        "tertiary-fixed-dim": "#ffb86b",
+                        "inverse-on-surface": "#303032",
+                        "surface-variant": "#353437"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "stack-lg": "32px",
+                        "stack-sm": "8px",
+                        "stack-md": "16px",
+                        "gutter": "12px",
+                        "margin-desktop": "24px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "stat-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "headline-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["32px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "stat-lg": ["28px", {"lineHeight": "1", "fontWeight": "800"}],
+                        "headline-lg-mobile": ["20px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "label-bold": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "headline-lg": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body-md">
+<!-- Top AppBar -->
+<header class="bg-surface/80 backdrop-blur-xl dark:bg-surface/80 fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-[600px] mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="language">language</span>
+<h1 class="font-display-lg text-display-lg bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Civio</h1>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="menu">menu</span>
+</div>
+</div>
+</header>
+<main class="pt-20 pb-24 max-w-[600px] mx-auto min-h-screen">
+<!-- Profile Header Section -->
+<section class="px-margin-mobile pt-4 flex flex-col items-center">
+<div class="relative">
+<div class="verified-ring rounded-full w-32 h-32 flex items-center justify-center">
+<div class="bg-surface rounded-full w-full h-full p-1 overflow-hidden">
+<img class="w-full h-full object-cover rounded-full" data-alt="A cinematic, high-fashion portrait of a young urban professional woman with a confident expression. The lighting is dramatic and moody, utilizing deep shadows and vibrant accents of electric blue and soft pink. The background is a blurred metropolitan night scene with bokeh lights. The overall aesthetic is premium, sharp, and consistent with a high-end dark-mode social interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb-mdQOf1Usp9N1Qoi-om-xXsVXzlRiWxsyno8yerSs_YdiCZer9ULQseoJlpOSYRG9pc6Sb6OjKfklFtrgQHS-PcIelMPn0gRXFAcnA5c6p__sLuANny8A8dqC5bwfPFWA6gpbPI64a3qeBsQQthZk4Y3eQ0CgRJ5CM1xK3yS52iZQ9y1CUVfQuuSLuheVHs_iv2oqUHlU0rj1VXCqmxofV3KE85sHyNAuoPRPdDzLW6Eq6SBA14nYGjc96nin805ZEb7fwyMwOs"/>
+</div>
+</div>
+<div class="absolute bottom-1 right-1 bg-primary text-on-primary p-1 rounded-full border-4 border-surface flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified" data-weight="fill">verified</span>
+</div>
+</div>
+<div class="mt-4 text-center">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile">Alex Sterling</h2>
+<p class="text-on-surface-variant font-label-bold mt-1 uppercase tracking-widest">Verified Resident • Brooklyn, NY</p>
+</div>
+<!-- Stats Grid: Achievement Style -->
+<div class="grid grid-cols-3 gap-3 w-full mt-8">
+<div class="achievement-gradient border border-white/5 p-4 rounded-xl text-center transition-all hover:scale-105 active:scale-95 duration-200">
+<p class="text-primary font-stat-lg text-stat-lg">24</p>
+<p class="text-on-surface-variant font-label-bold text-[10px] mt-1 uppercase">Issues Reported</p>
+</div>
+<div class="achievement-gradient border border-white/5 p-4 rounded-xl text-center transition-all hover:scale-105 active:scale-95 duration-200">
+<p class="text-secondary font-stat-lg text-stat-lg">142</p>
+<p class="text-on-surface-variant font-label-bold text-[10px] mt-1 uppercase">Issues Supported</p>
+</div>
+<div class="bg-primary-container/20 border border-primary/20 p-4 rounded-xl text-center relative overflow-hidden transition-all hover:scale-105 active:scale-95 duration-200">
+<div class="flex items-center justify-center gap-1">
+<p class="text-white font-stat-lg text-stat-lg">892</p>
+<span class="material-symbols-outlined text-green-400 text-lg" data-icon="north_east">north_east</span>
+</div>
+<p class="text-on-primary-container font-label-bold text-[10px] mt-1 uppercase">Impact Score</p>
+</div>
+</div>
+<button class="w-full mt-6 bg-primary-fixed text-on-primary-fixed font-label-bold py-3 rounded-full transition-transform active:scale-[0.98]">
+                Edit Profile
+            </button>
+</section>
+<!-- Tabs Section -->
+<section class="mt-8">
+<div class="sticky top-16 z-40 glass-tab border-b border-white/10">
+<div class="flex w-full">
+<button class="flex-1 py-4 flex flex-col items-center gap-1 border-b-2 border-primary text-primary" id="tab-posts" onclick="switchTab('posts')">
+<span class="material-symbols-outlined" data-icon="grid_view" data-weight="fill">grid_view</span>
+<span class="font-label-bold text-[10px] uppercase">Posts</span>
+</button>
+<button class="flex-1 py-4 flex flex-col items-center gap-1 border-b-2 border-transparent text-on-surface-variant" id="tab-supported" onclick="switchTab('supported')">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-label-bold text-[10px] uppercase">Supported</span>
+</button>
+<button class="flex-1 py-4 flex flex-col items-center gap-1 border-b-2 border-transparent text-on-surface-variant" id="tab-resolved" onclick="switchTab('resolved')">
+<span class="material-symbols-outlined" data-icon="task_alt">task_alt</span>
+<span class="font-label-bold text-[10px] uppercase">Resolved</span>
+</button>
+</div>
+</div>
+<!-- Content Grids -->
+<div class="grid grid-cols-3 gap-[2px] mt-[2px]" id="grid-container">
+<!-- Posts Content (Initial) -->
+<div class="aspect-square relative group">
+<img class="w-full h-full object-cover" data-alt="Close-up photograph of a cracked city sidewalk with vibrant green weeds growing through, captured in a gritty, high-contrast urban style. The morning sun casts long, dramatic shadows across the pavement. Professional photography with sharp details and deep blacks, evoking a sense of pressing infrastructure needs in a premium dark-themed social app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEFA2Ij0Msi5r3qwV-WRM3HFrPIlbj2N4CPc-YgKSucngCac4lNQx1IPImPv0aJaGYoXLMtag6p2hk37mpfRSrmvbFXF6xoMeOrNBB0-xZzKWOQkRB36W7nMz-pMPE43_4hivgPq04mo_8nYWF8N1O37uAhJgR0CrF6Zgc6pJEDLVUe9M_iataY_8S53ggoG-y0aUr6ry_tCM5W3HKmQevVc_vGulVxKTGzkHxHPJbS6Co21b3kfJNVsJqOfS7XdmRUBnT3I78zi4"/>
+<div class="absolute inset-0 bg-black/20 group-active:bg-black/40 transition-colors"></div>
+</div>
+<div class="aspect-square relative group">
+<img class="w-full h-full object-cover" data-alt="A malfunctioning neon street sign flickering in the rain at twilight. The electric blue and magenta light reflects off wet asphalt. Shot with a shallow depth of field, highlighting the technical failure of the public utility. The aesthetic is cinematic, moody, and perfectly suited for a high-end civic engagement platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALwabPED8qjIkACC6lsjPg2Yn4xE1u9IMCOTYNWIiYIrvAHvfRNs3_LGA0tvFdBF5kixG0iGCjegme0SFUFTbqoZyqgGcR2BogWffDOlRaMB2WWSPEWcMDMVHVVIY9cFc5VJH6HcnUGiZlxyFdnUHpQNPK84GGNUfr5MVJXDcy1OUg2P720Xtzj0msok5V3og1TuHam0HwT2bgV5iol-ehqYLfV5EfXv6xEvLQZS1lslp6tGIzkWqb-pErVr-u6l0_4JvdCicbLiA"/>
+<div class="absolute inset-0 bg-black/20 group-active:bg-black/40 transition-colors"></div>
+</div>
+<div class="aspect-square relative group">
+<img class="w-full h-full object-cover" data-alt="An overflowing designer trash bin in a minimalist urban park. The setting sun creates a warm, orange glow that contrasts with the cold, dark metal of the container. High-resolution shot focusing on community maintenance issues within a stylish, modern cityscape." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMN5vlqJ93NOq6zt3BTk5t4Iuq90qOgXJerr1StewXX5Ut7pxwTjJWGq4SGSNT7q11ap-7k9NgylY0dMOU9y8-ESiT4UvMzac3zr2lh2v81lt4TWfbjawrqXrt7R0_gV5o9YiJOe7u4fmJND1gSzimHvZid6o14CUT5tikgEZKSDLlQy3xCaGpnHXSFDbXY3cMUSmqGDZSHEwf199riXF0c7BhsN2cOuFfX9vng_ShoyFb96poV1DDL0_eka214-9MO_FZ687P_bY"/>
+<div class="absolute inset-0 bg-black/20 group-active:bg-black/40 transition-colors"></div>
+</div>
+<div class="aspect-square relative group">
+<img class="w-full h-full object-cover" data-alt="A wide-angle shot of a neglected public community garden under a dramatic, cloudy sky. The dark tones and muted greens emphasize the need for restoration. The composition is balanced and artistic, showcasing a civic reporting opportunity in a premium dark-mode interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6SZ-PoN4ABqRieFwT-m9kQ7AsATdEPgnacRS8moXTKhCGDZ3SwuhJa9w2KDgL5Vjh-RM1zGOT6jXqrsIRgFf7oTlNWvOsk_9Ke4fVF69b-0qtSAQQ8GO6KvZANR3rcR21frDDXYkk_2pHb6yIA6e2tbm7y1fvtrdov1qhDQMDJFc8Sc8JUXpHzDsfAtIr41BgE5BcjvcU9z22Xsbgw0YqzH6aGhGOMZOue2T8uk7srAugIa7zkRWp9e1msKoW8VJ411oJ42ArgOM"/>
+<div class="absolute inset-0 bg-black/20 group-active:bg-black/40 transition-colors"></div>
+</div>
+<div class="aspect-square relative group">
+<img class="w-full h-full object-cover" data-alt="A detailed view of a broken park bench made of dark wood and cast iron, surrounded by fallen autumn leaves. The lighting is soft and melancholic, emphasizing the passage of time and lack of upkeep. The visual style is premium and high-fidelity social media grade." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD37L1STqUbGfueDU0HwlO3XAh3kNUnoYh2i9Oi6kFBuiPHvtyVrIgLkjG3ar5rzTKRJzfskeCmY18LkmX-V_ZYRs_uheS7dIoAJv0HAMpfzdRnP0KUot9br_GEQY5j3DSV6_bdxypvSDme4IQaEEHrxxBgtIq4BHAslq933OkTqM0JGmg__TIMKb9VXu5rFD37Or6jaSHDFxssQdpuGMXUDoIqBP7aUF6GrmMMLirC-LipAxOt02h1Wn4B33sYTkvuy-rU_bSqouE"/>
+<div class="absolute inset-0 bg-black/20 group-active:bg-black/40 transition-colors"></div>
+</div>
+<div class="aspect-square relative group">
+<img class="w-full h-full object-cover" data-alt="Nighttime shot of a dimly lit bike lane with a large pothole. The bike lane's white lines are stark against the dark asphalt. Streetlights from above create localized pools of high-contrast light. A sharp, clear image focusing on urban safety concerns." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUPWkY6fsufI-SCqCDzNi8PfUcr2mbDEq_wX5XeD4EhzhhuDoHXU4iBYYKuJPAMpgCeHcCcvH9-MHbO86s0BRMvgyqUnQHXYHh-zJ5qiZ0cIdOu8mYMqC7Mqa_FO43tfuJ55ire1lL3koRGkQuFl4-rRWG3xxypAoCEJnZKvsd4dc53udDRqRe9xixJKbJyL-9xaXTHbnS6S78wQUTiqOl2qImdgAc3EpwVM5WQokQjtXhalXa6sqAtu1-1uI7YU3D4AUrPo40fC4"/>
+<div class="absolute inset-0 bg-black/20 group-active:bg-black/40 transition-colors"></div>
+</div>
+<div class="aspect-square relative group">
+<img class="w-full h-full object-cover" data-alt="Abstract view of peeling paint on a historic public building facade. The textures are rich and detailed, presented in a monochromatic dark palette with subtle hints of primary purple. High-end architectural photography style for civic reporting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn0XYTlv-fW7O1c3YViN6opfHE6Z17j0tZnAo948ob_nSxJO84R764C6MhIAkEdx5dMrxMP10iJf5Sn2IRjK4p2Tay0UzBlLbsJCWhVwmdy6kIIrMsbfnOD1Q3yuu-6anxjQbG6eoRxc56Ga_YRxjCAT34V0oyHeqlSbFqFiaBp3wd2tTblvN8BE-2uBubjpWuCdoGGS_R9Jr2H3tHREW0tt8DgN-7m-BgZjT-K_0bS5ylqERzWxdsFrlD7_ZIxpn4fKc-6MOCxWc"/>
+<div class="absolute inset-0 bg-black/20 group-active:bg-black/40 transition-colors"></div>
+</div>
+<div class="aspect-square relative group">
+<img class="w-full h-full object-cover" data-alt="A cluttered bus stop with faded posters and a cracked glass panel. The scene is illuminated by the artificial glow of a nearby shop window, creating a futuristic yet gritty urban atmosphere. Premium social media aesthetic for an issue reporting app." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS6_agehK35Gg4KMEj-ndidYFiSD2pR2vBDgFWJgErTWmvBJhfbwkv_EnE3_MwzQqpPn73JLmcEw_KF-NE9RjP4h6E8t2nx0HMsCIGV8FGhbwHC884qGIvNKQXl6nhqfgWoZy_PUWSvRNwQEI6ujFDsbHWZeAJL6_V2_jqxSJUVB6u85FFUAbg8YEX2mM8oAWLmtUkRJOmq-dMoPT6CRlAExpgMJdKdShK5zAwTicBVAir6yTMMZIKma6niX-SxhtWQANLtLfJ8zI"/>
+<div class="absolute inset-0 bg-black/20 group-active:bg-black/40 transition-colors"></div>
+</div>
+<div class="aspect-square relative group">
+<img class="w-full h-full object-cover" data-alt="Close up of a rusted water hydrant on a dark street corner. The iron texture is sharply defined, with deep red rust contrasting against the dark grey background. Dramatic lighting enhances the sense of urgency and age." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtVWlEGoUw-M4JLWeFiY6GarNfZ9ozGRQ1L2b26O--q6i1uwLtZfiHk03xd2f_DkOnbKkdhoDDFs5L4cbUEUZo39tYfq_J88HnpPUhT72KNyZ3tnPzvoo92tetPYpdclhM6LHvhvlCQNzRzgA8uZ2BwAdAjPYtSlBxFnhTQkTFqauIKwT-1bLIBx1be5S5Gy-MVazI_DMuD9QbclmWi0qVnoLmKUgpDaUr9Pj7TZKS62cUQpCjFy1l6Qh7ifJYRl9B3-h9dbRFEKQ"/>
+<div class="absolute inset-0 bg-black/20 group-active:bg-black/40 transition-colors"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] flex justify-around items-center px-gutter pb-6 h-20 bg-surface/80 backdrop-blur-xl dark:bg-surface/80 border-t border-white/10 z-50 rounded-t-xl shadow-lg">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-label-bold text-label-bold mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span class="font-label-bold text-label-bold mt-1">Nearby</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-transform duration-300 active:scale-90" href="#">
+<div class="bg-primary-container p-2 rounded-xl text-on-primary-container mb-1 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</div>
+<span class="font-label-bold text-label-bold">Create</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+<span class="font-label-bold text-label-bold mt-1">Trending</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary dark:text-primary-fixed transition-transform duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person" data-weight="fill">person</span>
+<span class="font-label-bold text-label-bold mt-1">Profile</span>
+</a>
+</nav>
+<script>
+        function switchTab(tab) {
+            const tabs = ['posts', 'supported', 'resolved'];
+            const container = document.getElementById('grid-container');
+            
+            // Update UI state
+            tabs.forEach(t => {
+                const el = document.getElementById(`tab-${t}`);
+                if (t === tab) {
+                    el.classList.add('border-primary', 'text-primary');
+                    el.classList.remove('border-transparent', 'text-on-surface-variant');
+                } else {
+                    el.classList.remove('border-primary', 'text-primary');
+                    el.classList.add('border-transparent', 'text-on-surface-variant');
+                }
+            });
+
+            // Generate Mock Content based on tab
+            let html = '';
+            const images = [
+                "A dramatic nighttime city view with light trails on a highway.",
+                "High-tech urban architecture with clean lines and reflective glass.",
+                "Close up of a high-tech surveillance camera on a dark street lamp.",
+                "A community meeting in a dimly lit, modern library space.",
+                "A sleek electric car charging at a futuristic urban station.",
+                "A bird's eye view of a geometric urban park at night.",
+                "A close-up of a high-resolution public transit digital map.",
+                "Minimalist street furniture in a plaza with cool lighting.",
+                "Hand holding a high-end smartphone displaying a civic app map."
+            ];
+
+            for (let i = 0; i < 9; i++) {
+                const isResolved = tab === 'resolved';
+                html += `
+                    <div class="aspect-square relative group overflow-hidden">
+                        <img src="placeholder" data-alt="${images[i]} Premium ${tab} content for a civic engagement app with a high-contrast dark aesthetic." class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/20 group-active:bg-black/40 transition-colors"></div>
+                        ${isResolved ? `
+                            <div class="absolute top-2 right-2 bg-green-500/90 text-white rounded-full p-1 shadow-lg">
+                                <span class="material-symbols-outlined text-[14px]" data-icon="check" data-weight="fill">check</span>
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            }
+            container.innerHTML = html;
+            
+            // Re-trigger any image injection scripts if this were a real system
+            // In this static mock, we're just updating the HTML structure
+        }
+    </script>
+</body></html>

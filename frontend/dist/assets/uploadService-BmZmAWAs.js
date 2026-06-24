@@ -1,0 +1,1 @@
+const a={uploadImage:async o=>new Promise((n,r)=>{const e=new window.FileReader;e.onloadend=()=>{typeof e.result=="string"?n(e.result):r(new Error("Failed to convert file to base64"))},e.onerror=()=>{r(new Error("File reading error"))},e.readAsDataURL(o)})};export{a as u};

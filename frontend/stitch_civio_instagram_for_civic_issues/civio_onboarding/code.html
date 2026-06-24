@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Civio | Empower Your Community</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#c3c0ff",
+                    "on-tertiary-fixed": "#2c1700",
+                    "inverse-surface": "#e5e1e4",
+                    "tertiary-container": "#935800",
+                    "surface-container-highest": "#353437",
+                    "outline": "#918fa0",
+                    "surface-dim": "#131315",
+                    "background": "#131315",
+                    "primary-fixed": "#e2dfff",
+                    "surface-bright": "#39393b",
+                    "outline-variant": "#464554",
+                    "tertiary-fixed": "#ffdcbc",
+                    "on-primary-fixed": "#0f0069",
+                    "on-secondary": "#660029",
+                    "error": "#ffb4ab",
+                    "inverse-primary": "#5149d4",
+                    "on-background": "#e5e1e4",
+                    "on-tertiary-fixed-variant": "#683d00",
+                    "on-surface": "#e5e1e4",
+                    "on-secondary-fixed": "#3f0017",
+                    "secondary": "#ffb1c0",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "primary-container": "#5851db",
+                    "surface-container": "#201f21",
+                    "secondary-fixed": "#ffd9df",
+                    "on-surface-variant": "#c7c4d7",
+                    "on-primary-container": "#e4e0ff",
+                    "surface-container-high": "#2a2a2c",
+                    "surface-tint": "#c3c0ff",
+                    "error-container": "#93000a",
+                    "surface": "#131315",
+                    "on-secondary-container": "#ffc6d0",
+                    "on-primary": "#1e00a5",
+                    "on-error-container": "#ffdad6",
+                    "secondary-container": "#b7004f",
+                    "secondary-fixed-dim": "#ffb1c0",
+                    "surface-container-low": "#1b1b1d",
+                    "on-tertiary": "#492900",
+                    "on-error": "#690005",
+                    "surface-container-lowest": "#0e0e10",
+                    "tertiary": "#ffb86b",
+                    "on-secondary-fixed-variant": "#90003d",
+                    "on-tertiary-container": "#ffdfc1",
+                    "on-primary-fixed-variant": "#382cbb",
+                    "tertiary-fixed-dim": "#ffb86b",
+                    "inverse-on-surface": "#303032",
+                    "surface-variant": "#353437"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-lg": "32px",
+                    "stack-sm": "8px",
+                    "stack-md": "16px",
+                    "gutter": "12px",
+                    "margin-desktop": "24px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "stat-lg": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-bold": ["Inter"],
+                    "headline-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["32px", {"lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "stat-lg": ["28px", {"lineHeight": "1", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["20px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-sm": ["14px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "label-bold": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-lg": ["24px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            color: #e5e1e4;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(18, 18, 20, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 300%;
+            height: 100%;
+        }
+
+        .carousel-slide {
+            width: 33.333%;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .active-dot {
+            width: 24px;
+            background-color: #c3c0ff;
+        }
+
+        .primary-gradient-btn {
+            background: linear-gradient(135deg, #c3c0ff 0%, #ffb1c0 100%);
+            color: #0f0069;
+            box-shadow: 0 4px 24px rgba(195, 192, 255, 0.3);
+        }
+
+        .civio-wordmark {
+            background: linear-gradient(to right, #c3c0ff, #ffb1c0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-black flex items-center justify-center min-h-screen p-0 m-0">
+<!-- Global Background Shader/Atmosphere -->
+<div class="fixed inset-0 z-0">
+
+</div>
+<!-- Onboarding Container (Mobile Centered) -->
+<main class="relative z-10 w-full max-w-[600px] h-[884px] flex flex-col justify-between items-center py-stack-lg overflow-hidden">
+<!-- Header & Logo -->
+<header class="w-full px-margin-mobile text-center pt-8">
+<h1 class="font-display-lg text-display-lg civio-wordmark mb-2 tracking-tighter">Civio</h1>
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">See it. Report it. Fix your area.</p>
+</header>
+<!-- Onboarding Carousel Area -->
+<div class="relative w-full flex-grow flex items-center justify-center overflow-hidden">
+<div class="carousel-track" id="carouselTrack">
+<!-- Slide 1: Spotting a pothole -->
+<div class="carousel-slide">
+<div class="w-full aspect-square mb-stack-lg relative rounded-3xl overflow-hidden glass-panel">
+<img class="w-full h-full object-cover" data-alt="A cinematic, high-fidelity digital illustration of a dark urban street at night with glowing violet neon lights. In the foreground, a detailed, cracked asphalt pothole is highlighted by a floating, translucent digital marker in electric blue. The aesthetic is clean, premium, and futuristic, with soft focus on a modern city skyline in the background, utilizing deep blacks and vibrant primary purple accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtsraDfiLguH6DLVDR5Cpf99vom7IO-OP8jLdpTQTsQI-VrXt9rKwrscLQpBEzo-aNdJmsjeNjW-c4W9zHNMfR929bkmNtQ2Z8-C875RdmRPlufWdo46N96bCwtTCJYdf2ZjAj7mhRqGYNoHqs-Wx6tC5w8l_omdDg5GBGkM-sbvTHgeFpmPvfSpGpvo57OIkbAHowigQ698Mk7N_MM02DN-WRb1DlhoPsl3lRB8FNZD7vK91-43G2iDc6vl5vdX_YzrrfoIUGhqw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<span class="material-symbols-outlined text-primary text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">add_location</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-white">Identify the Issue</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Capture infrastructure gaps or safety concerns in seconds with a photo.</p>
+</div>
+</div>
+</div>
+<!-- Slide 2: Community Supports -->
+<div class="carousel-slide">
+<div class="w-full aspect-square mb-stack-lg relative rounded-3xl overflow-hidden glass-panel">
+<img class="w-full h-full object-cover" data-alt="A stylized, social-media inspired graphic showing multiple semi-transparent glass hands rising from the bottom, symbolizing community unity. Each hand is outlined in a glowing pink-to-purple gradient. Small floating 'upvote' icons and fist emojis in a premium 3D clay style drift around the center, set against a deep midnight black background with a subtle lens flare effect." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBinXH9F4l52JXbYXwF9zfEsdGr8_MRmUDzHt4PP5kvPNkPHNs48-86QltuRPEAhZoZSFAX1TD5FBYiYj89olRZIMkgAWT1vzhlK2kg6ClumxymFQ6aRA9W7QubAlofz11815aaUtPuaODi3F1UV4uYReM7HxU2LIVmr87iGpawgVSGA6KjdX2vE9GAYoGAECGxjXuuOx29m9Ft25TlELOuBRBHlL41jIwgmZ7SRfB77manrjBEbngKHZxhMFy4q_D3oaQOqnTVmuo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<span class="material-symbols-outlined text-secondary text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">pan_tool</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-white">Gather Momentum</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Watch as neighbors upvote and boost your report to increase urgency.</p>
+</div>
+</div>
+</div>
+<!-- Slide 3: Resolution -->
+<div class="carousel-slide">
+<div class="w-full aspect-square mb-stack-lg relative rounded-3xl overflow-hidden glass-panel">
+<img class="w-full h-full object-cover" data-alt="A split-screen high-end digital art piece showing a 'Before and After' transformation of a city park. The left side is dim and cluttered with debris, while the right side is bright, lush, and perfectly renovated under a warm golden sunset glow. A digital checkmark icon floats in the center, rendered in a translucent glass texture with a vibrant orange border." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCA0vfy_zz-dcRfsAF88ySpEGHzpOJeWCwPi9pAOEyKVcIMaIY3Bzl_4Ew9Qun-HH8dW5m962SoecNKwS-Zz0ZiJKrSsDw5zXjnsfk23-Rzw_hhnbEpQdnd9jeXBKd1bz9htPUxy07ZnlZUWJOI9UYyCdIOTa7cfrdQNQXup4Zh-WsX0KvadIFqZHdL6FfJAFSXbkBKT4nJ_rlgmVzRusU0z0UsdGxvc99V5vxkcSCfIhSaEAzdPMI6koUUsTITOXsU75w8XMlccKU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<span class="material-symbols-outlined text-tertiary text-4xl mb-2" style="font-variation-settings: 'FILL' 1;">task_alt</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-white">Track the Fix</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Direct communication with city officials ensures your report gets resolved.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<footer class="w-full px-margin-mobile flex flex-col items-center gap-stack-md pb-12">
+<!-- Progress Dots -->
+<div class="flex gap-2 mb-4">
+<div class="dot w-2 h-2 rounded-full bg-surface-container-highest transition-all duration-300 active-dot" data-index="0"></div>
+<div class="dot w-2 h-2 rounded-full bg-surface-container-highest transition-all duration-300" data-index="1"></div>
+<div class="dot w-2 h-2 rounded-full bg-surface-container-highest transition-all duration-300" data-index="2"></div>
+</div>
+<button class="primary-gradient-btn w-full py-4 rounded-xl font-label-bold text-label-bold uppercase tracking-widest transition-all hover:scale-[1.02] active:scale-95">
+                Get Started
+            </button>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors" href="#">
+                Already have an account? <span class="font-label-bold text-primary">Log in</span>
+</a>
+</footer>
+</main>
+<!-- Navigation suppressed for Onboarding as per instructions -->
+<script>
+        let currentSlide = 0;
+        const totalSlides = 3;
+        const track = document.getElementById('carouselTrack');
+        const dots = document.querySelectorAll('.dot');
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentSlide * 33.333}%)`;
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active-dot');
+                    dot.classList.remove('w-2');
+                    dot.classList.add('w-6');
+                } else {
+                    dot.classList.remove('active-dot', 'w-6');
+                    dot.classList.add('w-2');
+                }
+            });
+        }
+
+        // Auto-swipe every 5 seconds
+        let autoPlay = setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }, 5000);
+
+        // Basic Touch Support
+        let startX = 0;
+        document.addEventListener('touchstart', e => {
+            startX = e.touches[0].clientX;
+            clearInterval(autoPlay);
+        });
+
+        document.addEventListener('touchend', e => {
+            let endX = e.changedTouches[0].clientX;
+            if (startX - endX > 50) {
+                // Swipe Left
+                currentSlide = Math.min(currentSlide + 1, totalSlides - 1);
+            } else if (endX - startX > 50) {
+                // Swipe Right
+                currentSlide = Math.max(currentSlide - 1, 0);
+            }
+            updateCarousel();
+        });
+
+        // Click on dots to navigate
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                currentSlide = parseInt(dot.getAttribute('data-index'));
+                updateCarousel();
+                clearInterval(autoPlay);
+            });
+        });
+
+        // Simple Fade-in micro-interactions
+        window.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('header, footer, .carousel-slide');
+            elements.forEach((el, i) => {
+                el.classList.add('fade-in');
+                el.style.animationDelay = `${i * 0.1}s`;
+            });
+        });
+    </script>
+</body></html>
