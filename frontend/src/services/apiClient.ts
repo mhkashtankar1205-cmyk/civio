@@ -1,8 +1,11 @@
 import axios from 'axios';
 import safeStorage from './storage';
 
-// Base API configuration targeting the Express backend
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+let envUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+if (envUrl.endsWith('/')) {
+  envUrl = envUrl.slice(0, -1);
+}
+const API_BASE_URL = envUrl.endsWith('/api') ? envUrl : `${envUrl}/api`;
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
